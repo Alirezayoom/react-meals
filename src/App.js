@@ -1,9 +1,10 @@
 import { Fragment } from 'react';
+import Header from './components/Layout/Header';
 
 function App() {
   return (
     <Fragment>
-      <h2>HI</h2>
+      <Header />
     </Fragment>
   );
 }
