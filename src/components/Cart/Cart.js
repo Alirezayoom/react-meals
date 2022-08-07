@@ -1,4 +1,4 @@
-import MealItem from '../Meals/MealItem/MealItem';
+// import MealItem from '../Meals/MealItem/MealItem';
 import Modal from '../UI/Modal';
 import classes from './Cart.module.css';
 
