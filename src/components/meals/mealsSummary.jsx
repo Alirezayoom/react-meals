@@ -1,6 +1,6 @@
 export default function MealsSummary() {
   return (
-    <section className="relative bg-neutral-900 rounded-lg p-6 mx-auto w-[40rem] -mt-48 z-10 text-center">
+    <section className="relative bg-neutral-900 rounded-lg p-6 mx-auto w-[40rem] -mt-48 mb-10 z-10 text-center">
       <h2 className="text-2xl font-bold mb-4">
         Delicious Food, Delivered To You
       </h2>
