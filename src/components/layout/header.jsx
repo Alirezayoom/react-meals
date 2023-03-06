@@ -8,7 +8,7 @@ export default function Header() {
         <h1 className="text-3xl font-bold">ReactMeals</h1>
         <HeaderCartButton />
       </header>
-      <div className="absolute top-0 w-full -translate-y-12 -skew-y-3 h-96 overflow-hidden">
+      <div className=" top-0 w-full -translate-y-32 -skew-y-3 h-96 overflow-hidden">
         <img src={mealsImage} alt="meals image" className="w-full" />
       </div>
     </>
