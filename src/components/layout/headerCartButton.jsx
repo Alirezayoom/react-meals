@@ -1,8 +1,11 @@
 import CartIcon from "../cart/cartIcon";
 
-export default function HeaderCartButton() {
+export default function HeaderCartButton(props) {
   return (
-    <button className="h-12 rounded-full px-10 bg-black/40 hover:bg-black/50 flex gap-3 items-center">
+    <button
+      onClick={props.onShowHandler}
+      className="h-12 rounded-full px-10 bg-black/40 hover:bg-black/50 flex gap-3 items-center"
+    >
       <span>
         <CartIcon />
       </span>
