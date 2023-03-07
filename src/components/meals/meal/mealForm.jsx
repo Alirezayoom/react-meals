@@ -9,7 +9,7 @@ export default function MealForm() {
           id: "amount",
           type: "number",
           min: "1",
-          max: "2",
+          max: "20",
           step: "1",
           defaultValue: "1",
         }}
