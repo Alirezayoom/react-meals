@@ -4,7 +4,7 @@ export default function Input(props) {
       <label className="text-black" htmlFor={props.input.id}>
         {props.label}
       </label>
-      <input className="w-12" {...props.input} />
+      <input className="w-12 bg-white text-black" {...props.input} />
     </div>
   );
 }
