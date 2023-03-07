@@ -2,9 +2,9 @@ import Input from "../../ui/input";
 
 export default function MealForm() {
   return (
-    <form className="">
+    <form className="flex flex-col gap-2">
       <Input
-        label="Amount"
+        label="Amount : "
         input={{
           id: "amount",
           type: "number",
