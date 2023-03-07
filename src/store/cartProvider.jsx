@@ -1,6 +1,6 @@
 import CartContext from "./cartContext";
 
-export default function CartProvider({ children }) {
+export default function CartProvider(props) {
   const addItemToCartHandler = (item) => {};
   const removeItemFromCartHandler = (id) => {};
 
@@ -11,5 +11,9 @@ export default function CartProvider({ children }) {
     removeItem: removeItemFromCartHandler,
   };
 
-  return <CartContext value={cartContext}>{props.children}</CartContext>;
+  return (
+    <CartContext.Provider value={cartContext}>
+      {props.children}
+    </CartContext.Provider>
+  );
 }
