@@ -10,8 +10,12 @@ export default function Cart(props) {
 
   const hasItems = ctx.items.length > 0;
 
-  const cartItemRemoveHandler = (id) => {};
-  const cartItemAddHandler = (item) => {};
+  const cartItemRemoveHandler = (id) => {
+    ctx.removeItem(id);
+  };
+  const cartItemAddHandler = (item) => {
+    ctx.addItem({ ...item, amount: 1 });
+  };
 
   const cartItems = (
     <ul className="mb-2 max-h-[16rem] overflow-scroll">
