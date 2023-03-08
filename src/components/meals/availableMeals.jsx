@@ -28,9 +28,10 @@ const DUMMY_MEALS = [
   },
 ];
 
-export default function AvailableMeals() {
+export default function AvailableMeals(props) {
   const mealsList = DUMMY_MEALS.map((meal) => (
     <Meal
+      id={meal.id}
       key={meal.id}
       name={meal.name}
       description={meal.description}
