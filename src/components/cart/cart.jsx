@@ -1,10 +1,29 @@
+import { useContext } from "react";
+import CartContext from "../../store/cartContext";
 import Modal from "../ui/modal";
+import CartItem from "./cartItem";
 
 export default function Cart(props) {
+  const ctx = useContext(CartContext);
+
+  const totalAmount = `$${ctx.totalAmount.toFixed(2)}`;
+
+  const hasItems = ctx.items.length > 0;
+
+  const cartItemRemoveHandler = (id) => {};
+  const cartItemAddHandler = (item) => {};
+
   const cartItems = (
-    <ul className="mb-2">
-      {[{ id: 1, name: "Sushi", amount: 2, price: 12.59 }].map((item) => (
-        <li>{item.name}</li>
+    <ul className="mb-2 max-h-[16rem] overflow-scroll">
+      {ctx.items.map((item) => (
+        <CartItem
+          key={item.id}
+          name={item.name}
+          amount={item.amount}
+          price={item.price}
+          onAdd={cartItemAddHandler.bind(null, item)}
+          onRemove={cartItemRemoveHandler.bind(null, item.id)}
+        />
       ))}
     </ul>
   );
@@ -14,7 +33,7 @@ export default function Cart(props) {
       {cartItems}
       <div className="flex justify-between font-bold text-xl mb-4">
         <span>Total Amount</span>
-        <span>34.44</span>
+        <span>{totalAmount}</span>
       </div>
       <div className="flex justify-end">
         <button
@@ -23,9 +42,11 @@ export default function Cart(props) {
         >
           Close
         </button>
-        <button className="py-1 px-4  ml-2 rounded-full text-white bg-orange-800 ">
-          Order
-        </button>
+        {hasItems && (
+          <button className="py-1 px-4  ml-2 rounded-full text-white bg-orange-800 ">
+            Order
+          </button>
+        )}
       </div>
     </Modal>
   );
